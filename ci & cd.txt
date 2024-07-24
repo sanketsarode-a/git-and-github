@@ -1,0 +1,76 @@
+ci & cd
+
+*Continuous integration (CI)
+
+-> Purpose: CI focuses on automating the integration of code changes 
+-> from multiple contributors into a single software project.
+->Developers frequently merge their code changes into a shared repository (often several times a day).
+
+->Each integration triggers an automated build and test process to detect integration errors early.
+
+->CI aims to provide rapid feedback to developers on the quality and correctness of their code changes.
+
+->Tools and Practices: CI pipelines typically include
+ tools like version control systems (e.g., Git), build automation tools
+  (e.g., Jenkins, Travis CI, CircleCI), and automated testing frameworks.
+
+*Continuous deployment
+
+-> Purpose: CD focuses on automating the entire software release process, from code integration and testing to deployment into production.
+Key Activities:
+
+->After code passes the CI phase, it undergoes further automated testing (e.g., unit tests, integration tests, performance tests).
+
+->If all tests pass, the code is automatically deployed to production or staging environments without manual intervention.
+
+->CD aims to ensure that changes are delivered to users as quickly and reliably as possible.
+Tools and Practices:
+
+-> CD pipelines include deployment automation tools 
+  (e.g., Kubernetes, Docker, Ansible), configuration management tools,
+   monitoring tools (e.g., Prometheus, ELK stack) to ensure the deployed     applications are stable and performant.
+
+
+how to differentiate between 399 vms according to projects
+aws runbook and aws group resources
+
+error code handleining 
+100 Continue: The initial part of a request has been received, and the client should continue with the request.
+101 Switching Protocols: The server is switching protocols as requested by the client (e.g., from HTTP to WebSocket).
+102 Processing (WebDAV): The server has received and is processing the request, but no response is available yet.
+103 Early Hints: The server is providing some early response headers to help the client start processing.
+
+
+200 OK: The request has succeeded. The meaning varies with the request method (e.g., GET, POST).
+201 Created: The request has been fulfilled, resulting in the creation of a new resource.
+202 Accepted: The request has been accepted for processing, but the processing is not complete.
+203 Non-Authoritative Information: The server is returning information from a third party, which may not be the original resource.
+204 No Content: The server successfully processed the request, and there is no content to return.
+205 Reset Content: Instructs the client to reset the document view, typically after a PUT or POST
+
+
+
+
+300 Multiple Choices: The request has more than one possible response. The user-agent or user should choose one of them.
+301 Moved Permanently: The URL of the requested resource has been changed permanently. The new URL is given in the response.
+302 Found: The resource has been temporarily moved to a different URL.
+303 See Other: The response can be found under a different URI, and the client should use a GET method on that resource.
+304 Not Modified: Indicates that the resource has not been modified since the version specified by the request headers.
+305 Use Proxy: The requested resource is only available through a proxy, whose address is provided in the response.
+
+
+
+
+400 Bad Request: The server cannot process the request due to a client error.
+401 Unauthorized: Authentication is required, and the request has not been applied because it lacks valid authentication credentials.
+402 Payment Required: Reserved for future use.
+403 Forbidden: The server understands the request but refuses to authorize it.
+404 Not Found: The server can't find the requested resource.
+\
+
+500 Internal Server Error: The server has encountered a situation it doesn't know how to handle.
+501 Not Implemented: The server does not support the functionality required to fulfill the request.
+502 Bad Gateway: The server was acting as a gateway or proxy and received an invalid response from the upstream server.
+503 Service Unavailable: The server is not ready to handle the request, usually due to maintenance or overload.
+504 Gateway Timeout: The server is acting as a gateway and cannot get a response in time from the upstream server.
+505 HTTP Version Not Supported: The server does not support the HTTP protocol version used in the request.

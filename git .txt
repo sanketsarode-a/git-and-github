@@ -1,0 +1,186 @@
+git 
+-> version control system
+-> that means keep track of all modified version
+-> can be traceback those changes
+
+1)  git config --list 
+-> this shows the username and email id 
+  
+how to change that 
+->  git config --global user.name "s@nket"
+->  git config --global user.email "hh"
+
+
+what is a Git repo
+-> a area where git tracks all files In our local area
+-> not all we can custom which we want to track
+
+git init
+-> this initializes a empty git repo
+-> automatically a  ".git " nam ke file ban jati hai jisee apan nich sari git ki 
+    commands execute kar sakte hai 
+-> this .git file is responsible for executing the commands
+
+
+
+scenario 
+I have 10 file I want to track and only 8 are modifed 2 are remaining
+so if I directly do git commit
+ all 10 will be added
+that's why there there is git add filename 
+which comes in handy when specific fil need to be tracked and say now it is ready to be tracked
+
+
+
+->  git add file1.html
+->  git add *      {adds all files}
+->  git add *.txt  {adds all files by extension .txt}
+
+this is known as stagging area
+means now the file is ready to be commit
+
+
+if we want to unstage
+  simply
+->  git rm --cached filename
+
+
+-> git commit -m "first"
+this tells us that 
+file is tracked and -m message that this is the first version
+
+
+
+now I have 3 version 
+and
+ -> git diff 
+shows what changes are made into the file
+
+-> git log 
+show the past history and commit id
+
+-> using commit id we can roll back to previous version
+ ->  git show commit id:filename
+
+-> git checkout commitid --*
+rollback to all previous version
+
+-> git checkout master --*
+ go to latest version
+
+
+-> git restore filename
+undo the saved changes
+
+
+* how to push repo to github
+ first create a connection
+
+-> git remote add origin httplink
+works as a alias
+
+so everytime no need to tell that push to this repo
+
+-> git branch -M main
+branch master ko move kardiya main mein
+
+->git push -u origin main
+
+once the file is modified
+only -> git push is required 
+
+
+reverse the Flow
+create a file in GitHub repo
+but when you see in local no changes are made 
+
+now simply use
+->git pull
+
+-> git clone httplink
+files would be copied to your local machine
+
+
+
+# git branch #
+
+-> git branch 
+list out all the branches
+
+-> git branch newbranchname
+new will be created
+
+->git checkout main
+  will switch to main branch
+
+try out a same file in two diff branch
+and then add and commit 
+after that in the branch we want to merge shift to that branch
+such that in main
+so now currently i am in main n branch
+now simply
+
+-> git merge new branch name
+if same line then conflicts occur
+
+ 
+-> .gitignore file
+under this the fil which are mentioned will be ignore while 
+git add *
+all will be included except .gitignore
+
+
+-> git clean
+untracked files will be automatically removed
+git clean -n 
+show which will be remove
+
+
+git revert
+Purpose: To undo changes introduced by a specific commit by creating a new commit.
+History: Preserves the commit history. The original commit remains in the history.
+New Commit: Creates a new commit that applies the opposite changes of the specified commit.
+Use Case: When you want to reverse the effects of a commit without altering the commit history.
+
+
+
+Exactly, that's correct. Let's break down the differences between git reset and git revert in more detail:
+
+git revert
+Purpose: To undo changes introduced by a specific commit by creating a new commit.
+History: Preserves the commit history. The original commit remains in the history.
+New Commit: Creates a new commit that applies the opposite changes of the specified commit.
+Use Case: When you want to reverse the effects of a commit without altering the commit history.
+Example:
+
+
+git reset
+Purpose: To move the current branch to a specified state, which can involve removing commits from the history.
+History: Can alter the commit history by removing commits. Depending on the type of reset, changes can be lost.
+
+
+difference  between git merge and git rebase
+
+git merge
+New Commit: Creates a new merge commit that combines the histories of both branches.
+History: The histories of both branches are preserved, and the merge commit has two parent commits (one from each branch).
+Resulting History:
+Original branch commits are retained.
+A new merge commit is added.
+
+git rebase
+No New Commit: No new merge commit is created. Instead, the commits from the feature branch are reapplied on top of the main branch.
+History: The history is rewritten to create a linear sequence of commits.
+Resulting History:
+Original commits from the feature branch are moved to the tip of the main branch.
+The commit history appears as if all work was done sequentially on the main branch.
+
+ HEAD 
+ branches 
+ config  
+description
+  hooks 
+ index 
+ info  
+objects 
+ refs
